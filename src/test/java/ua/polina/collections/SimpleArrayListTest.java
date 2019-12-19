@@ -1,10 +1,10 @@
-package ua.polina.collections.arrayList;
+package ua.polina.collections;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import ua.polina.collections.arrayList.Array;
+import ua.polina.collections.arrayList.SimpleArrayList;
 
 class SimpleArrayListTest {
     Array<String> strings;
