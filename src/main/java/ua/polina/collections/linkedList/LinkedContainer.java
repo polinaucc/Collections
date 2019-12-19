@@ -9,17 +9,16 @@ import java.util.Iterator;
 
 public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIterator<E> {
     public static void main(String... args) {
-        LinkedContainer<String> stringLinked = new LinkedContainer<>();
-        stringLinked.addLast("first");
-        stringLinked.addLast("second");
-        stringLinked.addLast("third");
+        LinkedContainer<String> strings = new LinkedContainer<>();
+        strings.addLast("one");
+        strings.addLast("two");
+        strings.addLast("three");
 
-        stringLinked.addFirst("zero");
-        stringLinked.addFirst("negative");
+        strings.addFirst("zero");
+        strings.addFirst("-one");
 
-        for (String s : stringLinked) System.out.println(s);
-
-        Iterator iterator = stringLinked.descendingIterator();
+        for (String s : strings) System.out.println(s);
+        Iterator iterator = strings.descendingIterator();
 
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
