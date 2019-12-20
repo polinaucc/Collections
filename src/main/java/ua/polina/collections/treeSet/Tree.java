@@ -1,4 +1,4 @@
-package ua.polina.collections.hashTree;
+package ua.polina.collections.treeSet;
 
 import java.util.List;
 import java.util.Optional;

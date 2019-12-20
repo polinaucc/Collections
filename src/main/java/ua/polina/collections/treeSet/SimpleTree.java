@@ -1,4 +1,4 @@
-package ua.polina.collections.hashTree;
+package ua.polina.collections.treeSet;
 
 
 import lombok.*;
@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class SimpleTree<E> implements Tree<E> {
     private Leaf<E> root = new Leaf<>(null);
@@ -21,12 +20,12 @@ public class SimpleTree<E> implements Tree<E> {
             return true;
         }
         Leaf<E> newNode = new Leaf<>(e);
-        Leaf<E> lastNode = search(root, newNode);
-        int compare = lastNode.compareTo(newNode);
+        Leaf<E> parentNode = search(root, newNode);
+        int compare = parentNode.compareTo(newNode);
         if (compare == 0) return false;
-        else if (compare < 0) lastNode.right = newNode;
-        else lastNode.left = newNode;
-        newNode.parent = lastNode;
+        else if (compare < 0) parentNode.right = newNode;
+        else parentNode.left = newNode;
+        newNode.parent = parentNode;
         size++;
         return true;
     }
@@ -139,7 +138,6 @@ public class SimpleTree<E> implements Tree<E> {
         private Leaf<E> parent;
         private Leaf<E> right;
         private Leaf<E> left;
-        @NonNull
         private E element;
 
         public Leaf(E element) {
